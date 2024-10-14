@@ -8,3 +8,5 @@ export const links = {
     home: "/",
     zenithxtech: "https://zenithx.tech",
 };
+
+export const typeForm = "SnfDWuLv";

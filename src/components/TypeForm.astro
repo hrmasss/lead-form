@@ -1,0 +1,47 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+    id: string;
+    class?: string;
+    typeForm: string;
+}
+
+const { id, class: className, typeForm } = Astro.props;
+---
+
+<type-form
+    data-form={typeForm}
+    data-id={id}>
+    <div
+        id={id}
+        class={cn("h-full min-h-[500px] py-8", className)}>
+    </div>
+</type-form>
+
+<script>
+    import "@typeform/embed/build/css/widget.css";
+    import { createWidget } from "@typeform/embed";
+
+    class TypeForm extends HTMLElement {
+        connectedCallback() {
+            const typeFormId = this.dataset.form;
+            const container = this.querySelector(`#${this.dataset.id}`);
+
+            if (!typeFormId || !(container instanceof HTMLElement)) {
+                console.error("Invalid Typeform ID or form container.");
+                return;
+            }
+
+            try {
+                createWidget(typeFormId, {
+                    container,
+                });
+            } catch (error) {
+                console.error("Failed to create Typeform widget:", error);
+            }
+        }
+    }
+
+    customElements.define("type-form", TypeForm);
+</script>
