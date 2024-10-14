@@ -4,21 +4,21 @@
 
 @layer base {
     :root {
-        --foreground: 240 55% 5%;
-        --background: 0 0% 98%;
+        --foreground: 0 0% 3.92%;
+        --background: 0 0% 89.8%;
 
-        --card: 0 0% 93%;
-        --border: 0 0% 88%;
+        --card: 0 0% 95.8%;
+        --border: 0 0% 69.8%;
 
-        --primary: 76 77% 63%;
-        --accent: 140 68% 74%;
+        --primary: 16 96% 53.14%;
+        --accent: 48 96% 53.14%;
     }
     .dark {
-        --foreground: 0 0% 98%;
-        --background: 240 55% 5%;
+        --foreground: 0 0% 89.8%;
+        --background: 0 0% 3.92%;
 
-        --card: 240 55% 10%;
-        --border: 240 55% 15%;
+        --card: 0 0% 8.92%;
+        --border: 0 0% 23.92%;
     }
 }
 

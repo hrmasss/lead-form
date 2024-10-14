@@ -1,1 +1,63 @@
-<footer></footer>
+---
+import { cn } from "@/lib/utils";
+import { Icon } from "astro-icon/components";
+import { socials } from "@config";
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<footer class="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+        class={cn(
+            "flex flex-col sm:flex-row justify-between items-center gap-2 py-6 border-t",
+            className
+        )}>
+        <div>
+            <p class="text-sm text-foreground/60">© 2024 DigiDisha.</p>
+        </div>
+
+        <ul class="flex flex-wrap items-center">
+            {
+                socials.map((social, index) => (
+                    <li
+                        class={`inline-block relative pe-4 text-sm ${
+                            index !== socials.length - 1
+                                ? "before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:size-[3px] before:rounded-full before:bg-foreground/40"
+                                : "last:pe-0 last-of-type:before:hidden"
+                        }`}>
+                        <a
+                            class="text-sm text-foreground/60 underline hover:text-foreground hover:decoration-2 hover:decoration-primary focus:outline-none focus:decoration-2 decoration-foreground/60"
+                            href={social.href}>
+                            {social.name}
+                        </a>
+                    </li>
+                ))
+            }
+
+            <li class="inline-block">
+                <button
+                    type="button"
+                    data-hs-theme-click-value="dark"
+                    class="hs-dark-mode hs-dark-mode-active:hidden relative flex justify-center items-center size-6 border text-foreground/60 rounded-full hover:bg-primary/20 focus:outline-none focus:bg-primary/20 hover:ring-2 ring-primary focus:ring-2">
+                    <Icon
+                        name="tabler:sun"
+                        class="size-3.5"
+                    />
+                </button>
+                <button
+                    type="button"
+                    data-hs-theme-click-value="light"
+                    class="hs-dark-mode hs-dark-mode-active:flex hidden relative justify-center items-center size-6 border text-foreground/60 rounded-full hover:bg-primary/20 focus:outline-none focus:bg-primary/20 hover:ring-2 ring-primary focus:ring-2">
+                    <Icon
+                        name="tabler:moon"
+                        class="size-3.5"
+                    />
+                </button>
+            </li>
+        </ul>
+    </div>
+</footer>
