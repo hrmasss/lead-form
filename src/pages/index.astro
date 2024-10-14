@@ -1,20 +1,13 @@
 ---
 import StatsSection from "@/components/StatsSection.astro";
 import FaqSection from "@/components/FaqSection.astro";
-import HeroSection from "@/components/HeroSection.astro";
-import TypeForm from "@/components/TypeForm.astro";
+import GoogleForm from "@/components/GoogleForm.astro";
 import Layout from "@/layouts/Layout.astro";
-import { typeForm } from "@config";
 ---
 
 <Layout title="Home">
     <div class="space-y-6 sm:space-y-12 py-12">
-        <TypeForm
-            id="lead-form"
-            typeForm={typeForm}
-        />
-
-        <HeroSection />
+        <GoogleForm />
 
         <StatsSection />
 
