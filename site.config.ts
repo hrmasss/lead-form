@@ -11,6 +11,32 @@ export const socials = [
     { name: "LinkedIn", href: "#" },
 ];
 
+export const contacts = {
+    title: "Let's Bring Your Vision to Life",
+    description:
+        "Ready to transform your ideas into powerful web applications? Fill out our project form and let's get started on your digital journey.",
+    contacts: [
+        {
+            icon: "tabler:mail",
+            title: "Contact us by email",
+            value: "zenithxtech@gmail.com",
+            link: "mailto:zenithxtech@gmail.com",
+        },
+        {
+            icon: "tabler:phone",
+            title: "Give us a call",
+            value: "+8801688784512",
+            link: "tel:+8801688784512",
+        },
+        {
+            icon: "tabler:help-circle",
+            title: "Visit our FAQ",
+            value: "Get quick answers",
+            link: "/#faq-section",
+        },
+    ],
+};
+
 export const stats = {
     title: "Excellence in Web Development",
     description:
