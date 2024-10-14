@@ -1,12 +1,17 @@
 ---
+import StatsSection from "@/components/StatsSection.astro";
 import TypeForm from "@/components/TypeForm.astro";
 import Layout from "@/layouts/Layout.astro";
 import { typeForm } from "@config";
 ---
 
 <Layout title="DigiDisha">
-    <TypeForm
-        id="lead-form"
-        typeForm={typeForm}
-    />
+    <div class="space-y-6 sm:space-y-12 py-12">
+        <TypeForm
+            id="lead-form"
+            typeForm={typeForm}
+        />
+
+        <StatsSection />
+    </div>
 </Layout>

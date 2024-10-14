@@ -1,0 +1,68 @@
+---
+import { cn } from "@/lib/utils";
+import { Icon } from "astro-icon/components";
+import { stats } from "@config";
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class={cn("p-4 sm:p-6", className)}>
+    <div
+        class="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center lg:justify-between">
+        <div class="lg:col-span-5 lg:col-start-1">
+            <div class="mb-8">
+                <h2 class="mb-2 text-3xl font-bold lg:text-4xl">
+                    {stats.title}
+                </h2>
+                <p class="text-foreground/60">
+                    {stats.description}
+                </p>
+            </div>
+
+            <blockquote class="relative">
+                <Icon
+                    name="tabler:quote"
+                    class="absolute top-0 start-0 transform -translate-x-6 -translate-y-8 size-16 text-foreground/10 rotate-180"
+                />
+                <div class="relative z-10">
+                    <p class="text-xl italic text-primary">
+                        {stats.testimonial.quote}
+                    </p>
+                </div>
+
+                <footer class="mt-6">
+                    <div class="font-semibold">
+                        {stats.testimonial.author}
+                    </div>
+                    <div class="text-xs text-foreground/60">
+                        {stats.testimonial.position}
+                    </div>
+                </footer>
+            </blockquote>
+        </div>
+
+        <div class="mt-10 lg:mt-0 lg:col-span-6 lg:col-end-13">
+            <div class="space-y-6 sm:space-y-8">
+                <ul
+                    class="grid grid-cols-2 divide-y divide-x divide-border overflow-hidden">
+                    {
+                        stats.stats.map((stat) => (
+                            <li class="flex flex-col items-center -m-0.5 p-4 sm:p-8">
+                                <div class="flex items-end gap-x-2 text-3xl sm:text-5xl font-bold mb-2">
+                                    {stat.value}
+                                </div>
+                                <p class="text-sm sm:text-base font-semibold text-foreground/60">
+                                    {stat.label}
+                                </p>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
